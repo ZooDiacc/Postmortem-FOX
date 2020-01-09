@@ -412,7 +412,7 @@ function positionIsValid(x, y) {
   });
 }
 
-oxo.inputs.listenKeyOnce("enter", function() {
+oxo.inputs.listenKeyOnce("p", function() {
   console.log("SA RENTRE ICI");
   oxo.screens.loadScreen("game0", function() {
     console.log("SA RENTRE LA UASSI");
