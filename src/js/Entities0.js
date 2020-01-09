@@ -411,3 +411,8 @@ function positionIsValid(x, y) {
     return x > obs.xStart && x < obs.xEnd && y > obs.yStart && y < obs.yEnd;
   });
 }
+oxo.inputs.listenKey("enter", function() {
+  oxo.screens.loadScreen("game0", function() {
+    // game.html is loaded, do something
+  });
+});
