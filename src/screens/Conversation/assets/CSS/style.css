@@ -1,0 +1,93 @@
+@font-face {
+    font-family: "upheavtt";
+    src: url("/assets/Fonts/upheaval/upheavtt.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+html {
+  height : 100%;
+}
+body {
+    height: inherit;
+    background-color:black;
+   }
+
+main {
+  margin-top: 10%;
+}
+
+img {
+    height: 100px;
+}
+
+.chat {
+    display:none;
+}
+
+.devil {
+
+    flex-wrap:wrap;
+  margin-left:300px;
+    justify-content: flex-start;
+ }
+
+.bloc_question{
+  background-color: white;
+  display:flex;
+  flex-wrap:wrap;
+  margin-left : 30px;
+  align-content: space-between;
+  width:250px;
+  height:94px;
+  border:3px solid #ffffff;
+  border-radius: 6px;
+ 
+ 
+}
+
+.hero {
+    flex-wrap:wrap;
+    margin-right:300px;
+    justify-content:flex-end
+     
+}
+
+.reponse_dialogue {
+  background-color:white;
+  display : flex;
+  flex-wrap:wrap;
+  margin-right:30px;
+  width:250px;
+  height:94px;
+  border-radius: 6px;
+}
+
+.text_demon{
+    
+  margin-left:20px;
+  margin-right:10px;
+  margin-top: 10px;
+  font-family: "upheavtt";
+}
+
+.text_ange{
+ text-align:right;
+  margin-right:10px;
+  margin-left:10px;
+  margin-top: auto;
+  font-family: "upheavtt";
+}
+
+
+
+  
+  
+
+
+
+
+
+
+
+   
+   
