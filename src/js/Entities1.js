@@ -392,9 +392,3 @@ Bullet.generate = function(actor, aimOverwrite) {
   var spdY = Math.sin((angle / 180) * Math.PI) * 5;
   Bullet(id, x, y, spdX, spdY, width, height, actor.type);
 };
-if  ( var self = Actor("player", "myId", 230, 10, 50, 70, Img.player, 10, 1) =true){
-  oxo.screens.loadScreen('game2', function() {
-    // game.html is loaded, do something
-  }
-}
-  
