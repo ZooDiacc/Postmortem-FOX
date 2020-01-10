@@ -1,3 +1,63 @@
+
+@import "vendors/reset";
+
+@import "global/layout";
+
+.sprite_hero {
+  position: absolute;
+  top: auto;
+  left: auto;
+
+  width: auto;
+  height: auto;
+  background-image: none;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: 400%, 100%;
+
+  animation-name: sprite-hero;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(3);
+  animation-iteration-count: infinite;
+}
+
+
+@keyframes sprite-hero {
+  from {
+    background-position: left;
+  }
+  to {
+    background-position: right;
+  }
+}
+
+.sprite_monstre {
+  position: absolute;
+  top: auto;
+  left: auto;
+
+  width: auto;
+  height: auto;
+  background-image: none;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: 400%, 100%;
+
+  animation-name: sprite-monstre;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(3);
+  animation-iteration-count: infinite;
+}
+
+@keyframes sprite-monstre {
+  from {
+    background-position: left;
+  }
+  to {
+    background-position: right;
+  }
+}
+
 html {
   height: 100%;
 }
