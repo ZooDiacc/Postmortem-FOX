@@ -279,7 +279,6 @@ Enemy.randomlyGenerate = function() {
   if (Math.random() < 0.5) Enemy(id, x, y, width, height, Img.bat, 2, 1);
   else Enemy(id, x, y, width, height, Img.DemonSprite, 1, 3);
 };
-
 //#####
 Upgrade = function(id, x, y, width, height, category, img) {
   var self = Entity("upgrade", id, x, y, width, height, img);

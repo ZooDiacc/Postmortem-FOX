@@ -414,7 +414,7 @@ Img.player.src = "../img/DemonSprite.png";
 Img.bat = new Image();
 Img.bat.src = "../img/bat.png";
 Img.DemonSprite = new Image();
-Img.DemonSprite.src = "../img/Hero.png";
+Img.DemonSprite.src = "../img/Demon.png";
 Img.bullet = new Image();
 Img.bullet.src = "../img/bullet.png";
 
