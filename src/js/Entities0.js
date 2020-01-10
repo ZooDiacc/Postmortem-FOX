@@ -82,15 +82,13 @@ Player = function() {
   };
 
   self.updatePosition = function() {
-    let newX = self.x;
-    let newY = self.y;
-
-    if (self.pressingRight && self.x < 745) newX += 10;
-
-    if (self.pressingLeft && self.x > 90) newX -= 10;
-    if (self.pressingDown && (self.y < 590 || (self.x > 310 && self.x < 480)))
-      newY += 10;
-    if (self.pressingUp && self.y > 130) newY -= 10;
+    if (self.pressingRight && self.x < 745) self.x += 10;
+    console.log(self, self.y > 40 && self.y < 46);
+    if (self.pressingLeft && (self.x > 105 || (self.y > 395 && self.y < 465)))
+      self.x -= 10;
+    if (self.pressingDown && self.y < 685) self.y += 10;
+    if (self.pressingUp && (self.y > 75 || (self.x > 385 && self.x < 435)))
+      self.y -= 10;
 
     if (positionIsValid(newX, newY)) {
       self.x = newX;

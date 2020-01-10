@@ -76,7 +76,7 @@ function positionIsValid(x, y) {
 }
 
 Player = function() {
-  var self = Actor("player", "myId", 425, 760, 50, 70, Img.player, 10, 1);
+  var self = Actor("player", "myId", 425, 760, 50, 70, Img.player, 10, 3);
   var super_update = self.update;
   self.update = function() {
     super_update();
@@ -97,10 +97,9 @@ Player = function() {
 
     if (self.pressingRight && self.x < 745) newX += 10;
 
-    if (self.pressingLeft && self.x > 90) newX -= 10;
-    if (self.pressingDown && (self.y < 590 || (self.x > 380 && self.x < 460)))
-      newY += 10;
-    if (self.pressingUp && self.y > 55) newY -= 10;
+    if (self.pressingLeft && self.x > 105) newX -= 10;
+    if (self.pressingDown && self.y < 590) newY += 10;
+    if (self.pressingUp && self.y > 10) newY -= 10;
 
     if (positionIsValid(newX, newY)) {
       self.x = newX;
@@ -257,16 +256,13 @@ Enemy = function(id, x, y, width, height, img, hp, atkSpd) {
     var diffX = player.x - self.x;
     var diffY = player.y - self.y;
 
-    if (diffX > 0) self.x += 3;
+    if (diffX > 3) self.x += 3;
     else self.x -= 3;
-
-    if (diffY > 0) self.y += 3;
+    if (diffY > 3) self.y += 3;
     else self.y -= 3;
   };
 };
-
 Enemy.list = {};
-
 Enemy.update = function() {
   if (frameCount % 100 === 0)
     //every 4 sec
@@ -280,14 +276,13 @@ Enemy.update = function() {
 };
 
 Enemy.randomlyGenerate = function() {
-  //Math.random() returns a number between 0 and 1
   var x = Math.random() * Maps.current.width;
   var y = Math.random() * Maps.current.height;
-  var height = 64;
-  var width = 64;
+  var height = 200;
+  var width = 200;
   var id = Math.random();
-  if (Math.random() < 0.5) Enemy(id, x, y, width, height, Img.bat, 2, 1);
-  else Enemy(id, x, y, width, height, Img.DemonSprite, 1, 3);
+  if (Math.random() < 0.5) Enemy(id, x, y, width, height, Img.bat, 0, 1);
+  else Enemy(id, 400, 400, width, height, Img.DemonSprite, 200, 8);
 };
 
 //#####
@@ -430,7 +425,7 @@ Img.player.src = "../img/DemonSprite.png";
 Img.bat = new Image();
 Img.bat.src = "../img/bat.png";
 Img.DemonSprite = new Image();
-Img.DemonSprite.src = "../img/Hero.png";
+Img.DemonSprite.src = "../img/Demon.png";
 Img.bullet = new Image();
 Img.bullet.src = "../img/bullet.png";
 
@@ -526,9 +521,6 @@ startNewGame = function() {
   score = 0;
   Enemy.list = {};
   Bullet.list = {};
-  Enemy.randomlyGenerate();
-  Enemy.randomlyGenerate();
-  Enemy.randomlyGenerate();
 };
 
 Maps = function(id, imgSrc, width, height) {

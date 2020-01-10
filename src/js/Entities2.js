@@ -285,8 +285,8 @@ Enemy.randomlyGenerate = function() {
   var height = 64;
   var width = 64;
   var id = Math.random();
-  if (Math.random() < 0.5) Enemy(id, x, y, width, height, Img.bat, 2, 1);
-  else Enemy(id, x, y, width, height, Img.DemonSprite, 1, 3);
+  if (Math.random() < 0.5) Enemy(id, x, y, 100, 100, Img.bat, 5, 2);
+  else Enemy(id, 200, 300, width, height, Img.DemonSprite, 1, 3);
 };
 
 //#####
