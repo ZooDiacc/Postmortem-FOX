@@ -1,90 +1,33 @@
-@import "vendors/reset";
-
-@import "global/layout";
-
-.sprite_hero {
-  position: absolute;
-  top: auto;
-  left: auto;
-
-  width: auto;
-  height: auto;
-  background-image: none;
-  background-position: left;
-  background-repeat: no-repeat;
-  background-size: 400%, 100%;
-
-  animation-name: sprite-hero;
-  animation-duration: 0.5s;
-  animation-timing-function: steps(3);
-  animation-iteration-count: infinite;
-}
-
-@keyframes sprite-hero {
-  from {
-    background-position: left;
-  }
-  to {
-    background-position: right;
-  }
-}
-
-.sprite_monstre {
-  position: absolute;
-  top: auto;
-  left: auto;
-
-  width: auto;
-  height: auto;
-  background-image: none;
-  background-position: left;
-  background-repeat: no-repeat;
-  background-size: 400%, 100%;
-
-  animation-name: sprite-monstre;
-  animation-duration: 0.5s;
-  animation-timing-function: steps(3);
-  animation-iteration-count: infinite;
-}
-
-@keyframes sprite-monstre {
-  from {
-    background-position: left;
-  }
-  to {
-    background-position: right;
-  }
-}
 html {
   height: 100%;
 }
 body {
-    background-color:black;
-    height: inherit;
-    overflow: hidden;
-   
+  background-color: black;
+  height: inherit;
+  overflow: hidden;
 }
-.screen2, .screen1 {
+.screen2,
+.screen1 {
   position: absolute;
   display: flex;
   width: 100%;
   height: inherit;
 }
 .img {
-   margin: auto;
-   height: inherit;
+  margin: auto;
+  height: inherit;
 }
 .play {
   animation: blink infinite 1s;
 }
 .hide {
-    opacity: 0;
+  opacity: 0;
 }
 @keyframes blink {
   from {
     opacity: 0%;
   }
-  49%{
+  49% {
     opacity: 0%;
   }
   50% {
