@@ -23,6 +23,8 @@ body {
 .hide {
     display:none;
 }
+
+
 @keyframes blink {
   from {
     opacity: 0%;
