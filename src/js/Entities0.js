@@ -486,14 +486,16 @@ document.onkeydown = function(event) {
   else if (event.keyCode === 83)
     //s
     player.pressingDown = true;
-  else if (event.keyCode === 81)
-    //q
+  else if (event.keyCode === 65)
+    //a
     player.pressingLeft = true;
-  else if (event.keyCode === 90)
-    // z
+  else if (event.keyCode === 87)
+    // w
     player.pressingUp = true;
+  else if (event.keyCode === 80)
+    //p
+    paused = !paused;
 };
-
 document.onkeyup = function(event) {
   if (event.keyCode === 68)
     //d
@@ -501,17 +503,17 @@ document.onkeyup = function(event) {
   else if (event.keyCode === 83)
     //s
     player.pressingDown = false;
-  else if (event.keyCode === 81)
-    //q
+  else if (event.keyCode === 65)
+    //a
     player.pressingLeft = false;
-  else if (event.keyCode === 90)
-    // z
+  else if (event.keyCode === 87)
+    // w
     player.pressingUp = false;
 };
 
 update = function() {
   if (paused) {
-    ctx.fillText("Paused", WIDTH, HEIGHT);
+    ctx.fillText("Paused", WIDTH / 2.2, HEIGHT / 2);
     return;
   }
 
