@@ -82,13 +82,15 @@ Player = function() {
   };
 
   self.updatePosition = function() {
-    if (self.pressingRight && self.x < 745) self.x += 10;
-    console.log(self, self.y > 40 && self.y < 46);
-    if (self.pressingLeft && (self.x > 105 || (self.y > 395 && self.y < 465)))
-      self.x -= 10;
-    if (self.pressingDown && self.y < 685) self.y += 10;
-    if (self.pressingUp && (self.y > 75 || (self.x > 385 && self.x < 435)))
-      self.y -= 10;
+    let newX = self.x;
+    let newY = self.y;
+
+    if (self.pressingRight && self.x < 745) newX += 10;
+
+    if (self.pressingLeft && self.x > 90) newX -= 10;
+    if (self.pressingDown && (self.y < 590 || (self.x > 310 && self.x < 480)))
+      newY += 10;
+    if (self.pressingUp && self.y > 130) newY -= 10;
 
     if (positionIsValid(newX, newY)) {
       self.x = newX;
@@ -409,15 +411,6 @@ function positionIsValid(x, y) {
     return x > obs.xStart && x < obs.xEnd && y > obs.yStart && y < obs.yEnd;
   });
 }
-
-oxo.inputs.listenKeyOnce("p", function() {
-  console.log("SA RENTRE ICI");
-  oxo.screens.loadScreen("game0", function() {
-    console.log("SA RENTRE LA UASSI");
-    // game.html is loaded, do something
-  });
-});
-resetValues();
 var ctx = document.getElementById("ctx").getContext("2d");
 ctx.font = "30px Arial";
 ctx.mozImageSmoothingEnabled = false; //better graphics for pixel art
@@ -484,16 +477,14 @@ document.onkeydown = function(event) {
   else if (event.keyCode === 83)
     //s
     player.pressingDown = true;
-  else if (event.keyCode === 65)
-    //a
+  else if (event.keyCode === 81)
+    //q
     player.pressingLeft = true;
-  else if (event.keyCode === 87)
-    // w
+  else if (event.keyCode === 90)
+    // z
     player.pressingUp = true;
-  else if (event.keyCode === 80)
-    //p
-    paused = !paused;
 };
+
 document.onkeyup = function(event) {
   if (event.keyCode === 68)
     //d
@@ -501,17 +492,17 @@ document.onkeyup = function(event) {
   else if (event.keyCode === 83)
     //s
     player.pressingDown = false;
-  else if (event.keyCode === 65)
-    //a
+  else if (event.keyCode === 81)
+    //q
     player.pressingLeft = false;
-  else if (event.keyCode === 87)
-    // w
+  else if (event.keyCode === 90)
+    // z
     player.pressingUp = false;
 };
 
 update = function() {
   if (paused) {
-    ctx.fillText("Paused", WIDTH / 2.2, HEIGHT / 2);
+    ctx.fillText("Paused", WIDTH, HEIGHT);
     return;
   }
 
