@@ -469,16 +469,14 @@ document.onkeydown = function(event) {
   else if (event.keyCode === 83)
     //s
     player.pressingDown = true;
-  else if (event.keyCode === 65)
-    //a
+  else if (event.keyCode === 81)
+    //q
     player.pressingLeft = true;
-  else if (event.keyCode === 87)
-    // w
+  else if (event.keyCode === 90)
+    // z
     player.pressingUp = true;
-  else if (event.keyCode === 80)
-    //p
-    paused = !paused;
 };
+
 document.onkeyup = function(event) {
   if (event.keyCode === 68)
     //d
@@ -486,13 +484,14 @@ document.onkeyup = function(event) {
   else if (event.keyCode === 83)
     //s
     player.pressingDown = false;
-  else if (event.keyCode === 65)
-    //a
+  else if (event.keyCode === 81)
+    //q
     player.pressingLeft = false;
-  else if (event.keyCode === 87)
-    // w
+  else if (event.keyCode === 90)
+    // z
     player.pressingUp = false;
 };
+
 update = function() {
   if (paused) {
     ctx.fillText("Paused", WIDTH / 2.2, HEIGHT / 2);
